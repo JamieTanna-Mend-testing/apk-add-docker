@@ -15,7 +15,7 @@
 				"apk"
 			],
 			"registryUrls": [
-				"https://apk.cgr.dev/chainguard"
+				"https://packages.wolfi.dev/os?arch=x86_64"
 			]
 		}
 	]
