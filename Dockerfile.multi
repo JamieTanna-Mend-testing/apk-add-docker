@@ -1,0 +1,14 @@
+# Same base image/digest as ./Dockerfile.
+FROM cgr.dev/chainguard/wolfi-base:latest@sha256:96ff486b326d15db16aa1fbd41a17043a557bebf76d2c0ac932e717534025940
+
+# Multiple packages in a single, line-continued `apk add`, mixing pinned
+# and unpinned packages, to exercise multi-line parsing.
+RUN apk upgrade --no-cache && \
+    apk add --no-cache \
+        bash=5.2.37-r0 \
+        ca-certificates-bundle \
+        curl=8.9.1-r4 \
+        jq=1.7.1-r4
+
+ENV APP_HOST=0.0.0.0
+ENV APP_PORT=5000
