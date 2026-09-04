@@ -8,7 +8,7 @@ RUN apk upgrade --no-cache && \
         bash=5.2.37-r0 \
         ca-certificates-bundle \
         curl=8.9.1-r4 \
-        jq=1.7.1-r4
+        jq=1.8.2-r2
 
 ENV APP_HOST=0.0.0.0
 ENV APP_PORT=5000
