@@ -29,7 +29,7 @@ image we use to get an `apk` binary with the Wolfi/Chainguard package set.
 - `Dockerfile.multistage` - two stages, each with their own `apk add`, to
   check updates are scoped per-stage rather than only matching the first
   `RUN` in the file.
-- `Dockerfile.private-repo` - a pinned package (`acme-internal-tool`)
+- `Dockerfile.private-repo` - a pinned package (`internal-tool`)
   installed from a private, authenticated Chainguard APK repo
   (`https://apk.cgr.dev/EXAMPLE-ORG`) rather than the public Wolfi index,
   to check that the new manager can cope with a non-default `registryUrl`
