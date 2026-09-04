@@ -36,12 +36,15 @@ image we use to get an `apk` binary with the Wolfi/Chainguard package set.
   and a `RUN` that mixes repository setup/auth/cleanup around the
   `apk add`. `renovate.json` scopes that one package to the private
   `registryUrl` via `packageRules`/`matchPackageNames` (everything else
-  stays on the public Wolfi index), and declares a matching `hostRules`
-  entry for `apk.cgr.dev`. The `username`/`password` there are
-  deliberately left empty - this is a public repro repo, so there's no
-  real credential to commit; the entry exists to show the shape Renovate
-  needs, and would be filled in (or supplied via Renovate's encrypted
-  secrets/env config) in a real private-repo setup.
+  stays on the public Wolfi index). The matching `hostRules` entry for
+  `apk.cgr.dev` lives in `config.js` instead, not `renovate.json` - as
+  with a real Renovate setup, `hostRules` carry credentials, so they
+  belong in the global/self-hosted config rather than the repo's own
+  (often publicly visible) config. The `username`/`password` there are
+  read from `CHAINGUARD_APK_USERNAME`/`CHAINGUARD_APK_PASSWORD` env vars,
+  defaulting to empty - this is a public repro repo, so there's no real
+  credential to commit; set those env vars to test against a real
+  private repo.
 
 ## Pinning
 

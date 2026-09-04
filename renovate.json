@@ -32,12 +32,5 @@
 				"https://apk.cgr.dev/EXAMPLE-ORG"
 			]
 		}
-	],
-	"hostRules": [
-		{
-			"matchHost": "apk.cgr.dev",
-			"username": "",
-			"password": ""
-		}
 	]
 }
