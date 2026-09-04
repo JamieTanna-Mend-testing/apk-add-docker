@@ -5,4 +5,4 @@ FROM cgr.dev/chainguard/wolfi-base:latest@sha256:96ff486b326d15db16aa1fbd41a1704
 
 # curl is pinned to an old, known version so Renovate's upcoming `apk add`
 # support has a version to bump.
-RUN apk add --no-cache curl=8.9.1-r4
+RUN apk add --no-cache curl=8.12.1-r3
