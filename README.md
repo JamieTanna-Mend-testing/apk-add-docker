@@ -29,6 +29,19 @@ image we use to get an `apk` binary with the Wolfi/Chainguard package set.
 - `Dockerfile.multistage` - two stages, each with their own `apk add`, to
   check updates are scoped per-stage rather than only matching the first
   `RUN` in the file.
+- `Dockerfile.private-repo` - a pinned package (`acme-internal-tool`)
+  installed from a private, authenticated Chainguard APK repo
+  (`https://apk.cgr.dev/EXAMPLE-ORG`) rather than the public Wolfi index,
+  to check that the new manager can cope with a non-default `registryUrl`
+  and a `RUN` that mixes repository setup/auth/cleanup around the
+  `apk add`. `renovate.json` scopes that one package to the private
+  `registryUrl` via `packageRules`/`matchPackageNames` (everything else
+  stays on the public Wolfi index), and declares a matching `hostRules`
+  entry for `apk.cgr.dev`. The `username`/`password` there are
+  deliberately left empty - this is a public repro repo, so there's no
+  real credential to commit; the entry exists to show the shape Renovate
+  needs, and would be filled in (or supplied via Renovate's encrypted
+  secrets/env config) in a real private-repo setup.
 
 ## Pinning
 

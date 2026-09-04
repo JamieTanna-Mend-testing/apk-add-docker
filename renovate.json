@@ -14,9 +14,30 @@
 			"matchDepTypes": [
 				"apk"
 			],
+			"excludePackageNames": [
+				"acme-internal-tool"
+			],
 			"registryUrls": [
 				"https://packages.wolfi.dev/os?arch=x86_64"
 			]
+		},
+		{
+			"matchDepTypes": [
+				"apk"
+			],
+			"matchPackageNames": [
+				"acme-internal-tool"
+			],
+			"registryUrls": [
+				"https://apk.cgr.dev/EXAMPLE-ORG"
+			]
+		}
+	],
+	"hostRules": [
+		{
+			"matchHost": "apk.cgr.dev",
+			"username": "",
+			"password": ""
 		}
 	]
 }
