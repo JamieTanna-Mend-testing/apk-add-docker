@@ -4,4 +4,4 @@ RUN apk upgrade --no-cache && \
         py3-pip \
         python3 \
         rsyslog=8.2412.0-r1 \
-        runit=2.2.0
+        runit=2.3.1
