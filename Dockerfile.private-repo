@@ -1,14 +1,6 @@
 # Same base image/digest as ./Dockerfile.
+# NOTE that this - in real-life - would be a private Docker image
 FROM cgr.dev/chainguard/wolfi-base:latest@sha256:96ff486b326d15db16aa1fbd41a17043a557bebf76d2c0ac932e717534025940
 
-# Installs a package from our org's private Chainguard APK repo, in
-# addition to the public Wolfi index the other fixtures here use. Only
-# entitled orgs can resolve https://apk.cgr.dev/EXAMPLE-ORG, so auth is a
-# short-lived `chainctl auth token` passed in as a build secret rather than
-# baked into the image, and the repositories file is reverted in the same
-# RUN so the token never lands in a layer.
-RUN --mount=type=secret,id=chainguard_token \
-    echo "https://apk.cgr.dev/EXAMPLE-ORG" >> /etc/apk/repositories && \
-    HTTP_AUTH="basic:apk.cgr.dev:user:$(cat /run/secrets/chainguard_token)" \
-        apk add --no-cache internal-tool=1.4.2-r0 && \
-    sed -i '\#https://apk.cgr.dev/EXAMPLE-ORG#d' /etc/apk/repositories
+# NOTE that this would likely already be wired up to use our private packages
+RUN apk add --no-cache internal-tool=1.4.2-r0
