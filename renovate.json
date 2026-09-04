@@ -8,5 +8,15 @@
 	"separateMultipleMajor": true,
 	"separateMultipleMinor": true,
 	"prHourlyLimit": 0,
-	"prConcurrentLimit": 0
+	"prConcurrentLimit": 0,
+	"packageRules": [
+		{
+			"matchDepTypes": [
+				"apk"
+			],
+			"registryUrls": [
+				"https://apk.cgr.dev/chainguard"
+			]
+		}
+	]
 }
