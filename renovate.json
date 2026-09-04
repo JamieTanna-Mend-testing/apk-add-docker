@@ -11,22 +11,24 @@
 	"prConcurrentLimit": 0,
 	"packageRules": [
 		{
+			"description": "Use Wolfi's public pacakges by default",
 			"matchDepTypes": [
 				"apk"
 			],
-			"excludePackageNames": [
-				"internal-tool"
+			"matchFileNames": [
+				"*"
 			],
 			"registryUrls": [
 				"https://packages.wolfi.dev/os?arch=x86_64"
 			]
 		},
 		{
+			"description": "Use a private Chainguard packages registry",
 			"matchDepTypes": [
 				"apk"
 			],
-			"matchPackageNames": [
-				"internal-tool"
+			"matchFileNames": [
+				"Dockerfile.private-repo"
 			],
 			"registryUrls": [
 				"https://apk.cgr.dev/EXAMPLE-ORG"
