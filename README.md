@@ -34,9 +34,9 @@ image we use to get an `apk` binary with the Wolfi/Chainguard package set.
   (`https://apk.cgr.dev/EXAMPLE-ORG`) rather than the public Wolfi index,
   to check that the new manager can cope with a non-default `registryUrl`
   and a `RUN` that mixes repository setup/auth/cleanup around the
-  `apk add`. `renovate.json` scopes that one package to the private
-  `registryUrl` via `packageRules`/`matchPackageNames` (everything else
-  stays on the public Wolfi index). The matching `hostRules` entry for
+  `apk add`. `renovate.json` scopes the private `registryUrl` to that one
+  file via `packageRules`/`matchFileNames` (every other Dockerfile stays
+  on the public Wolfi index). The matching `hostRules` entry for
   `apk.cgr.dev` lives in `config.js` instead, not `renovate.json` - as
   with a real Renovate setup, `hostRules` carry credentials, so they
   belong in the global/self-hosted config rather than the repo's own

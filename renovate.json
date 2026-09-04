@@ -11,7 +11,7 @@
 	"prConcurrentLimit": 0,
 	"packageRules": [
 		{
-			"description": "Use Wolfi's public pacakges by default",
+			"description": "Use Wolfi's public packages by default",
 			"matchDepTypes": [
 				"apk"
 			],
