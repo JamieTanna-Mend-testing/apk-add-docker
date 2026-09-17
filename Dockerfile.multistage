@@ -3,7 +3,7 @@
 # the first RUN in the file.
 FROM cgr.dev/chainguard/wolfi-base:latest@sha256:96ff486b326d15db16aa1fbd41a17043a557bebf76d2c0ac932e717534025940 AS builder
 
-RUN apk add --no-cache curl-dev=8.9.1-r4
+RUN apk add --no-cache curl-dev=8.22.0-r0
 
 FROM cgr.dev/chainguard/wolfi-base:latest@sha256:96ff486b326d15db16aa1fbd41a17043a557bebf76d2c0ac932e717534025940
 
