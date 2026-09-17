@@ -1,10 +1,10 @@
 # Multi-stage build: each stage has its own pinned `apk add`, to check
 # that updates are scoped correctly per-stage rather than only matching
 # the first RUN in the file.
-FROM cgr.dev/chainguard/wolfi-base:latest@sha256:96ff486b326d15db16aa1fbd41a17043a557bebf76d2c0ac932e717534025940 AS builder
+FROM cgr.dev/chainguard/wolfi-base:latest@sha256:1d95114038f76513a9ace6fca107d5582b08c65981f81f61cb56bf7fd2ef216d AS builder
 
 RUN apk add --no-cache curl-dev=8.9.1-r4
 
-FROM cgr.dev/chainguard/wolfi-base:latest@sha256:96ff486b326d15db16aa1fbd41a17043a557bebf76d2c0ac932e717534025940
+FROM cgr.dev/chainguard/wolfi-base:latest@sha256:1d95114038f76513a9ace6fca107d5582b08c65981f81f61cb56bf7fd2ef216d
 
 RUN apk add --no-cache curl=8.9.1-r4
